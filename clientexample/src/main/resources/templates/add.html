@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>platformtechlab</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+<script>
+
+</script>    
+</head>
+<body>
+  <div align="center" class="form-style-8">
+	<h2>Employee Add</h2>
+		
+    <form action="#" th:action="@{/addemployee/{action} (action=${uidata.action})}" th:object="${uidata.employee}" method="post">
+    	<table>
+	      <tr> <td>NO </td> <td> <input type="text" th:field="*{empNo}" value="${uidata.employee.empNo}" /></td></tr> 
+        <tr> <td>NAME </td> <td> <input type="text"   th:field="*{empName}" value="${uidata.employee.empName}" /></td></tr>	
+	      <tr> <td>POSITION </td> <td> <input type="text"   th:field="*{position}" value="${uidata.employee.position}" /></td></tr>	
+	      <tr> <td> </td><td><input type="submit"   value="Submit" /> </td></tr>	
+	   </table>
+    </form>
+    
+    </div>
+</body>
+</html>

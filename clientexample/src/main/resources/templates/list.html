@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>platformtechlab</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8"/>
+    <link href="/css/main.css" th:href="@{/css/main.css}" rel="stylesheet" media="screen"/>
+<script>
+
+</script>    
+</head>
+<body>
+  <div align="center" class="form-style-8">
+	<h2>Employee Lists</h2>
+		
+	<table>
+	<thead>
+        <tr>
+            <th>NO</th>
+            <th>Name</th>
+            <th>Position</th>
+        </tr>
+    </thead>
+	
+	 <tbody>
+		<tr th:each="employee : ${uidata.employees}" >
+		     <td><a th:href="@{/empinfo/{empNo} (empNo=${employee.empNo})}" th:text="${employee.empNo}"></a></td>
+		  	 <td th:text="${employee.empName}"/>
+		   	 <td th:text="${employee.position}"/>
+		</tr>
+		 </tbody>
+	</table>
+              <a th:href="@{/addemployee/ADD/new}">ADD</a>
+    </div>
+</body>
+</html>
